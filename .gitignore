@@ -1,0 +1,14 @@
+# IntelliJ IDEA (Java)
+.idea/
+*.iml
+
+# Visual Studio (C#)
+.vs/
+bin/
+obj/
+*.suo
+*.user
+
+# Общее
+target/
+.DS_Store

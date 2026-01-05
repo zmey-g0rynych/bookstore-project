@@ -1,0 +1,17 @@
+﻿<Window x:Class="WpfApp1.WelcomeWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Добро пожаловать" Height="300" Width="400"
+        Background="#EDE6DA"
+        FontFamily="Segoe UI"
+        FontSize="14"
+        Foreground="#4B3B2B">
+    <Grid>
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBlock Text="Введите баланс:" Margin="0,0,0,15" FontWeight="SemiBold" Foreground="#7D8F69"/>
+            <TextBox x:Name="BalanceInput" Width="200" Height="30" BorderBrush="#A47149" BorderThickness="1" Background="#FFF8E7" Foreground="#4B3B2B"/>
+            <Button Content="Подтвердить" Width="120" Height="30" Margin="0,20,0,0" 
+                    Background="#A47149" Foreground="White" BorderBrush="#7D8F69" Click="Continue_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>
