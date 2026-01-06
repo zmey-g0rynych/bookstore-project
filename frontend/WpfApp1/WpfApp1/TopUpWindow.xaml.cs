@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows;
+using System.Text.RegularExpressions;
 
 namespace WpfApp1
 {
@@ -12,18 +13,33 @@ namespace WpfApp1
             InitializeComponent();
         }
 
+        private static readonly Regex MoneyRegex =
+    new Regex(@"^\d+([.,]\d{1,2})?$");
+
         private void TopUp_Click(object sender, RoutedEventArgs e)
         {
-            if (decimal.TryParse(TopUpAmountBox.Text, out decimal value) && value > 0)
+            string input = TopUpAmountBox.Text;
+
+            input = input.Trim();
+            input = input.Replace(',', '.');
+
+            if (!MoneyRegex.IsMatch(input))
             {
-                Amount = value;
-                DialogResult = true;
-                Close();
+                MessageBox.Show(
+                    "Введите корректную сумму пополнения",
+                    "Ошибка",
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Warning);
+                return;
             }
-            else
-            {
-                MessageBox.Show("Введите корректную положительную сумму.", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Warning);
-            }
+
+            Amount = decimal.Parse(
+                input,
+                System.Globalization.CultureInfo.InvariantCulture);
+
+            DialogResult = true;
+            Close();
         }
+
     }
 }

@@ -1,14 +1,23 @@
-# IntelliJ IDEA (Java)
-.idea/
-*.iml
+# Java/Spring
+backend/target/
+backend/*.jar
+backend/*.class
+backend/logs/
 
-# Visual Studio (C#)
-.vs/
-bin/
-obj/
-*.suo
-*.user
+# C#/WPF
+frontend/bin/
+frontend/obj/
+frontend/*.dll (кроме если вы добавите DLL позже)
+frontend/*.exe
 
-# Общее
-target/
+# Database
+bd/*.sql~ (backup files)
+bd/data/ (если есть локальные данные)
+
+# General
+*.log
+*.tmp
 .DS_Store
+Thumbs.db
+.idea/
+.vscode/

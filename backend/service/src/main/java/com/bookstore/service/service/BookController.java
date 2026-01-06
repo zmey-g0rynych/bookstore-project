@@ -1,6 +1,5 @@
 package com.bookstore.service.service;
 
-import com.bookstore.service.data.BookRepository;
 import com.bookstore.service.model.Book;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
@@ -9,40 +8,28 @@ import java.util.List;
 @RequestMapping("/api/books")
 public class BookController {
 
-    private final BookRepository bookRepository;
+    private final BookService bookService; // Измените на service
 
-    public BookController(BookRepository bookRepository) {
-        this.bookRepository = bookRepository;
+    public BookController(BookService bookService) { // Инжектим service
+        this.bookService = bookService;
     }
 
     @GetMapping
     public List<Book> getAllBooks() {
-        return bookRepository.findAll();
+        return bookService.getAllBooks();
     }
 
     @GetMapping("/{id}")
     public Book getBook(@PathVariable Integer id) {
-        return bookRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("Book not found with id " + id));
+        return bookService.getBook(id);
     }
 
     @GetMapping("/search")
     public List<Book> searchBooks(
             @RequestParam(required = false) String title,
             @RequestParam(required = false) String authorFirstName,
-            @RequestParam(required = false) String authorLastName,
-            @RequestParam(required = false) String description) {
+            @RequestParam(required = false) String authorLastName) {
 
-        if (title != null && !title.isEmpty()) {
-            return bookRepository.findByTitleContains(title);
-        }
-        if (authorFirstName != null && !authorFirstName.isEmpty()) {
-            return bookRepository.findByAuthorFirstNameContains(authorFirstName);
-        }
-        if (authorLastName != null && !authorLastName.isEmpty()) {
-            return bookRepository.findByAuthorLastNameContains(authorLastName);
-        }
-
-        return bookRepository.findAll();
+        return bookService.searchBooks(title, authorFirstName, authorLastName);
     }
 }
