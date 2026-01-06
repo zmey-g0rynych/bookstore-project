@@ -56,3 +56,7 @@ C:\Users\Ivan\Desktop\bookstore-project\frontend\WpfApp1\WpfApp1\obj\Debug\net7.
 C:\Users\Ivan\Desktop\bookstore-project\frontend\WpfApp1\WpfApp1\obj\Debug\net7.0-windows\Resources\Strings.en.baml
 C:\Users\Ivan\Desktop\bookstore-project\frontend\WpfApp1\WpfApp1\obj\Debug\net7.0-windows\Resources\Strings.ru.baml
 C:\Users\Ivan\Desktop\bookstore-project\frontend\WpfApp1\WpfApp1\obj\Debug\net7.0-windows\Resources\Strings.ua.baml
+C:\Users\Ivan\Desktop\bookstore-project\frontend\WpfApp1\WpfApp1\bin\Debug\net7.0-windows\BookstoreLibrary.dll
+C:\Users\Ivan\Desktop\bookstore-project\frontend\WpfApp1\WpfApp1\bin\Debug\net7.0-windows\BookstoreLibrary.pdb
+C:\Users\Ivan\Desktop\bookstore-project\frontend\WpfApp1\WpfApp1\obj\Debug\net7.0-windows\WpfApp1.csproj.AssemblyReference.cache
+C:\Users\Ivan\Desktop\bookstore-project\frontend\WpfApp1\WpfApp1\obj\Debug\net7.0-windows\WpfApp1.csproj.CopyComplete

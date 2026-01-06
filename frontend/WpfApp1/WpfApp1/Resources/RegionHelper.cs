@@ -1,42 +1,35 @@
-﻿using System.Globalization;
+﻿using BookstoreLibrary;
+using System.Globalization;
 using WpfApp1.Settings;
 
 namespace WpfApp1
 {
     public static class RegionHelper
     {
-        // Применяет наценку в зависимости от региона
         public static decimal ApplyMarkup(decimal price)
         {
-            return AppSettings.CurrentRegion switch
+            decimal markupPercent = AppSettings.CurrentRegion switch
             {
-                Region.Russia => price,           // без наценки
-                Region.Ukraine => price * 1.05m,  // +5%
-                Region.UK => price * 1.10m,       // +10%
-                _ => price
+                Region.Russia => 0m,
+                Region.Ukraine => 5m,
+                Region.UK => 10m,
+                _ => 0m
             };
+
+            return Utilities.ApplyMarkup(price, markupPercent);
         }
 
         public static string FormatCurrency(decimal amount)
         {
-            return AppSettings.CurrentRegion switch
+            string symbol = AppSettings.CurrentRegion switch
             {
-                Region.Russia => $"{amount:N2} ₽",
-                Region.Ukraine => $"{amount:N2} ₴",
-                Region.UK => $"{amount:N2} £",
-                _ => amount.ToString("N2")
+                Region.Russia => "₽",
+                Region.Ukraine => "₴",
+                Region.UK => "£",
+                _ => "$"
             };
-        }
 
-        public static CultureInfo GetCultureInfo()
-        {
-            return AppSettings.CurrentRegion switch
-            {
-                Region.Russia => new CultureInfo("ru-RU"),
-                Region.Ukraine => new CultureInfo("uk-UA"),
-                Region.UK => new CultureInfo("en-GB"),
-                _ => CultureInfo.InvariantCulture
-            };
+            return Utilities.FormatCurrency(amount, symbol);
         }
     }
 }

@@ -22,8 +22,10 @@ namespace WpfApp1
         private void AddToCart_Click(object sender, RoutedEventArgs e)
         {
             AddedToCart = true;
+            DialogResult = true; // <- вот это важно для ShowDialog()
             Close();
         }
+
 
         private void Close_Click(object sender, RoutedEventArgs e)
         {
