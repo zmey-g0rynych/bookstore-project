@@ -7,4 +7,10 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Reference Include="BookstoreLibrary">
+      <HintPath>..\BookstoreLibrary\BookstoreLibrary\bin\Debug\net7.0\BookstoreLibrary.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
 </Project>
