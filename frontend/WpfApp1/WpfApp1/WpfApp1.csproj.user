@@ -24,6 +24,15 @@
     <Page Update="CartWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Resources\Strings.en.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Resources\Strings.ua.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Resources\Strings.ru.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="TopUpWindow.xaml">
       <SubType>Designer</SubType>
     </Page>

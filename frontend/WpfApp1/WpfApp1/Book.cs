@@ -1,13 +1,20 @@
-﻿namespace WpfApp1
+﻿using WpfApp1.Settings;
+
+namespace WpfApp1
 {
     public class Book
     {
         public string Title { get; set; }
         public string AuthorFirstName { get; set; }
         public string AuthorLastName { get; set; }
-        public double Price { get; set; }
+        public double Price { get; set; }   // базовая цена
         public string Description { get; set; }
 
         public string AuthorFullName => $"{AuthorFirstName} {AuthorLastName}";
+
+        // Цена с наценкой для текущего региона
+        public decimal PriceWithMarkup => RegionHelper.ApplyMarkup((decimal)Price);
+
+        public string PriceText { get; set; } // Для отображения в UI
     }
 }
