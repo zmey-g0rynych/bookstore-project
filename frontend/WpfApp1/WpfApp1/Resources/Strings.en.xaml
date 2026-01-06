@@ -1,0 +1,66 @@
+﻿    <ResourceDictionary
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:sys="clr-namespace:System;assembly=mscorlib">
+
+        <!-- WelcomeWindow -->
+        <sys:String x:Key="Welcome_Title">Welcome</sys:String>
+        <sys:String x:Key="Welcome_Header">Welcome to the Bookstore</sys:String>
+        <sys:String x:Key="Welcome_ChooseRegion">Select your region:</sys:String>
+        <sys:String x:Key="Welcome_EnterBalance">Enter starting balance:</sys:String>
+        <sys:String x:Key="Welcome_ContinueButton">Continue</sys:String>
+        <sys:String x:Key="Welcome_SelectRegionMsg">Please select a region</sys:String>
+        <sys:String x:Key="Welcome_SelectRegionTitle">Region not selected</sys:String>
+        <sys:String x:Key="Welcome_InvalidBalanceMsg">Enter a valid amount (e.g., 100 or 100.50)</sys:String>
+        <sys:String x:Key="Welcome_InvalidBalanceTitle">Input Error</sys:String>
+
+        <sys:String x:Key="Region_Russia">Russia</sys:String>
+        <sys:String x:Key="Region_Ukraine">Ukraine</sys:String>
+        <sys:String x:Key="Region_UK">United Kingdom</sys:String>
+
+        <!-- MainWindow -->
+        <sys:String x:Key="Main_Title">Bookstore</sys:String>
+        <sys:String x:Key="Main_TopUpBalanceButton">Top up balance</sys:String>
+        <sys:String x:Key="Main_CartButton">Cart</sys:String>
+        <sys:String x:Key="Main_BookTitle">Title</sys:String>
+        <sys:String x:Key="Main_BookAuthor">Author</sys:String>
+        <sys:String x:Key="Main_BookPrice">Price without extra charge</sys:String>
+        <sys:String x:Key="BalanceText">Your balance:</sys:String>
+
+        <!-- TopUpWindow -->
+        <sys:String x:Key="TopUp_Title">Top Up Balance</sys:String>
+        <sys:String x:Key="TopUp_EnterAmount">Enter amount to top up:</sys:String>
+        <sys:String x:Key="TopUp_Button">Top Up</sys:String>
+        <sys:String x:Key="TopUp_InvalidAmount">Enter a valid top-up amount</sys:String>
+        <sys:String x:Key="TopUp_InvalidAmountTitle">Error</sys:String>
+        <sys:String x:Key="TopUp_AuthorLabel">Author</sys:String>
+        <sys:String x:Key="TopUp_PriceLabel">Price</sys:String>
+    
+        <!-- CartWindow -->
+        <sys:String x:Key="Cart_Title">Cart</sys:String>
+        <sys:String x:Key="Cart_RemoveSelected">Remove selected</sys:String>
+        <sys:String x:Key="Cart_Pay">Pay cart</sys:String>
+        <sys:String x:Key="Cart_Close">Close</sys:String>
+        <sys:String x:Key="Cart_SelectBookToRemove">Select a book to remove.</sys:String>
+        <sys:String x:Key="Cart_InsufficientFundsTitle">Insufficient funds</sys:String>
+        <sys:String x:Key="Cart_PaymentSuccess">Payment successful!</sys:String>
+        <sys:String x:Key="Cart_TotalText">Total: {0}</sys:String>
+
+        <!-- BookDetailsWindow -->
+        <sys:String x:Key="BookDetails_Title">Book Details</sys:String>
+        <sys:String x:Key="BookDetails_AddToCart">Add to cart</sys:String>
+        <sys:String x:Key="BookDetails_Close">Close</sys:String>
+        <sys:String x:Key="BookDetails_AuthorLabel">Author:</sys:String>
+        <sys:String x:Key="BookDetails_PriceLabel">Price:</sys:String>
+
+
+
+        <sys:String x:Key="Cart_InfoTitle">Information</sys:String>
+        <sys:String x:Key="Cart_AddSuccess">Book added to cart!</sys:String>
+        <sys:String x:Key="Cart_InsufficientFundsMsg">Insufficient funds. Required: {0}, available: {1}</sys:String>
+        <sys:String x:Key="TopUp_SuccessMsg">Balance successfully topped up by {0}</sys:String>
+        <sys:String x:Key="TopUp_SuccessTitle">Top-up completed</sys:String>
+        <sys:String x:Key="Main_LoadBooksError">Error loading books</sys:String>
+        <sys:String x:Key="Main_ErrorTitle">Error</sys:String>
+
+    </ResourceDictionary>

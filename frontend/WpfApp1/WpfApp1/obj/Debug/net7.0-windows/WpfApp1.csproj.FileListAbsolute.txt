@@ -53,3 +53,6 @@ C:\Users\Ivan\Desktop\bookstore-project\frontend\WpfApp1\WpfApp1\obj\Debug\net7.
 C:\Users\Ivan\Desktop\bookstore-project\frontend\WpfApp1\WpfApp1\obj\Debug\net7.0-windows\WpfApp1.pdb
 C:\Users\Ivan\Desktop\bookstore-project\frontend\WpfApp1\WpfApp1\obj\Debug\net7.0-windows\WpfApp1.genruntimeconfig.cache
 C:\Users\Ivan\Desktop\bookstore-project\frontend\WpfApp1\WpfApp1\obj\Debug\net7.0-windows\ref\WpfApp1.dll
+C:\Users\Ivan\Desktop\bookstore-project\frontend\WpfApp1\WpfApp1\obj\Debug\net7.0-windows\Resources\Strings.en.baml
+C:\Users\Ivan\Desktop\bookstore-project\frontend\WpfApp1\WpfApp1\obj\Debug\net7.0-windows\Resources\Strings.ru.baml
+C:\Users\Ivan\Desktop\bookstore-project\frontend\WpfApp1\WpfApp1\obj\Debug\net7.0-windows\Resources\Strings.ua.baml

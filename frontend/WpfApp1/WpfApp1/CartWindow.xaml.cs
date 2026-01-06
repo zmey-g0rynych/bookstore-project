@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows;
+using WpfApp1.Settings;
 
 namespace WpfApp1
 {
@@ -15,6 +16,7 @@ namespace WpfApp1
         public CartWindow(List<CartItem> cartItems, decimal currentBalance)
         {
             InitializeComponent();
+
             this.cartItems = cartItems;
             this.balance = currentBalance;
 
@@ -25,11 +27,50 @@ namespace WpfApp1
         {
             CartList.ItemsSource = null;
             CartList.ItemsSource = cartItems.Select(item =>
-                $"{item.Book.Title} — {item.Quantity} шт. — {item.Book.Price:C} за шт.");
+                $"{item.Book.Title} — {item.Quantity} шт. — {RegionHelper.FormatCurrency(item.Book.PriceWithMarkup)} за шт.");
 
-            decimal total = cartItems.Sum(item => (decimal)item.Book.Price * item.Quantity);
-            TotalText.Text = $"Общая сумма: {total:C}";
-            BalanceText.Text = $"Ваш баланс: {balance:C}";
+            decimal total = cartItems.Sum(item => item.Book.PriceWithMarkup * item.Quantity);
+
+            // Берём корректный ключ ресурса для TotalText
+            if (Application.Current.Resources.Contains("Cart_TotalText"))
+                TotalText.Text = string.Format((string)Application.Current.Resources["Cart_TotalText"], RegionHelper.FormatCurrency(total));
+            else
+                TotalText.Text = $"Total: {RegionHelper.FormatCurrency(total)}";
+
+            BalanceText.Text = $"{Application.Current.Resources["BalanceText"]} {RegionHelper.FormatCurrency(balance)}";
+        }
+
+        private void PayCart_Click(object sender, RoutedEventArgs e)
+        {
+            decimal total = cartItems.Sum(item => item.Book.PriceWithMarkup * item.Quantity);
+
+            if (total > balance)
+            {
+                MessageBox.Show(
+                    string.Format(
+                        (string)Application.Current.Resources["Cart_InsufficientFundsMsg"],
+                        RegionHelper.FormatCurrency(total),
+                        RegionHelper.FormatCurrency(balance)
+                    ),
+                    (string)Application.Current.Resources["Cart_InsufficientFundsTitle"],
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Warning
+                );
+                return;
+            }
+
+            balance -= total;
+            cartItems.Clear();
+            UpdateCartDisplay();
+
+            BalanceUpdated?.Invoke(balance);
+
+            MessageBox.Show(
+                (string)Application.Current.Resources["Cart_PaymentSuccess"],
+                (string)Application.Current.Resources["Cart_PaymentSuccessTitle"],
+                MessageBoxButton.OK,
+                MessageBoxImage.Information
+            );
         }
 
         private void RemoveSelected_Click(object sender, RoutedEventArgs e)
@@ -40,35 +81,19 @@ namespace WpfApp1
                 selectedItem.Quantity--;
 
                 if (selectedItem.Quantity <= 0)
-                {
                     cartItems.RemoveAt(CartList.SelectedIndex);
-                }
 
                 UpdateCartDisplay();
             }
             else
             {
-                MessageBox.Show("Выберите книгу для удаления.", "Удаление", MessageBoxButton.OK, MessageBoxImage.Warning);
+                MessageBox.Show(
+                    (string)Application.Current.Resources["Cart_SelectBookToRemove"],
+                    (string)Application.Current.Resources["Cart_InfoTitle"],
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Warning
+                );
             }
-        }
-
-
-        private void PayCart_Click(object sender, RoutedEventArgs e)
-        {
-            decimal total = cartItems.Sum(item => (decimal)item.Book.Price * item.Quantity);
-
-            if (total > balance)
-            {
-                MessageBox.Show($"Недостаточно средств. Требуется: {total:C}, доступно: {balance:C}", "Недостаточно средств", MessageBoxButton.OK, MessageBoxImage.Warning);
-                return;
-            }
-
-            balance -= total;
-            cartItems.Clear();
-            UpdateCartDisplay();
-
-            BalanceUpdated?.Invoke(balance); // обновим основной баланс
-            MessageBox.Show("Оплата прошла успешно!", "Успех", MessageBoxButton.OK, MessageBoxImage.Information);
         }
 
         private void Close_Click(object sender, RoutedEventArgs e)

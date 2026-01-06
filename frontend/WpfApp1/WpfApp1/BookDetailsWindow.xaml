@@ -1,21 +1,39 @@
 ﻿<Window x:Class="WpfApp1.BookDetailsWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Информация о книге" Height="300" Width="400"
-        Background="#FFF8E7" 
+        Title="{DynamicResource BookDetails_Title}"
+        Height="300" Width="400"
+        Background="#FFF8E7"
         FontFamily="Segoe UI"
         FontSize="14"
         Foreground="#4B3B2B">
-    <StackPanel Margin="15">
-        <TextBlock x:Name="TitleText" FontWeight="Bold" FontSize="18" Foreground="#7D8F69"/>
-        <TextBlock x:Name="AuthorText" Margin="0,8,0,0" Foreground="#A47149"/>
-        <TextBlock x:Name="PriceText" Margin="0,8,0,0" Foreground="#A47149"/>
-        <TextBlock x:Name="DescriptionText" Margin="0,15,0,0" TextWrapping="Wrap" Foreground="#4B3B2B"/>
-        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,20,0,0" >
-            <Button Content="Добавить в корзину" Width="140" Height="30" Margin="0,0,10,0" 
-                    Background="#A47149" Foreground="White" BorderBrush="#7D8F69" Click="AddToCart_Click"/>
-            <Button Content="Закрыть" Width="100" Height="30" 
-                    Background="#7D8F69" Foreground="White" BorderBrush="#A47149" Click="Close_Click"/>
+    <Grid Margin="15">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!-- Название книги -->
+        <TextBlock x:Name="TitleText" FontWeight="Bold" FontSize="18" Foreground="#7D8F69" Grid.Row="0" Margin="0,0,0,10"/>
+
+        <!-- Автор -->
+        <TextBlock x:Name="AuthorText" Grid.Row="1" Margin="0,0,0,5"/>
+
+        <!-- Цена -->
+        <TextBlock x:Name="PriceText" Grid.Row="2" Margin="0,0,0,10"/>
+
+        <!-- Описание -->
+        <TextBlock x:Name="DescriptionText" TextWrapping="Wrap" Grid.Row="3"/>
+
+        <!-- Кнопки -->
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Grid.Row="4" Margin="0,10,0,0">
+            <Button Content="{DynamicResource BookDetails_AddToCart}" Width="120" Margin="0,0,10,0"
+                    Background="#7D8F69" Foreground="White" BorderBrush="#4B3B2B" Click="AddToCart_Click"/>
+            <Button Content="{DynamicResource BookDetails_Close}" Width="80"
+                    Background="#A47149" Foreground="White" BorderBrush="#7D8F69" Click="Close_Click"/>
         </StackPanel>
-    </StackPanel>
+    </Grid>
 </Window>

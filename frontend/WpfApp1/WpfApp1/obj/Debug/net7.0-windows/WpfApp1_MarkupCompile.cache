@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET7_0;NETCOREAPP
 C:\Users\Ivan\Desktop\bookstore-project\frontend\WpfApp1\WpfApp1\App.xaml
-51781387509
+8-919668565
 
-9-601992502
+121762325567
 198947991364
-BookDetailsWindow.xaml;CartWindow.xaml;MainWindow.xaml;TopUpWindow.xaml;WelcomeWindow.xaml;
+BookDetailsWindow.xaml;CartWindow.xaml;MainWindow.xaml;Resources\Strings.en.xaml;Resources\Strings.ru.xaml;Resources\Strings.ua.xaml;TopUpWindow.xaml;WelcomeWindow.xaml;
 
 False
 

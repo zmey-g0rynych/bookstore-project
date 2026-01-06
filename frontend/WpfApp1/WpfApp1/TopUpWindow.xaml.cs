@@ -26,8 +26,8 @@ namespace WpfApp1
             if (!MoneyRegex.IsMatch(input))
             {
                 MessageBox.Show(
-                    "Введите корректную сумму пополнения",
-                    "Ошибка",
+                    (string)Application.Current.Resources["TopUp_InvalidAmountMsg"],
+                    (string)Application.Current.Resources["TopUp_InvalidAmountTitle"],
                     MessageBoxButton.OK,
                     MessageBoxImage.Warning);
                 return;
@@ -40,6 +40,7 @@ namespace WpfApp1
             DialogResult = true;
             Close();
         }
+
 
     }
 }

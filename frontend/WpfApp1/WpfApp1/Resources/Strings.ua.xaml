@@ -1,0 +1,64 @@
+﻿    <ResourceDictionary
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:sys="clr-namespace:System;assembly=mscorlib">
+
+        <!-- WelcomeWindow -->
+        <sys:String x:Key="Welcome_Title">Ласкаво просимо</sys:String>
+        <sys:String x:Key="Welcome_Header">Ласкаво просимо до книжкового магазину</sys:String>
+        <sys:String x:Key="Welcome_ChooseRegion">Оберіть регіон:</sys:String>
+        <sys:String x:Key="Welcome_EnterBalance">Введіть початковий баланс:</sys:String>
+        <sys:String x:Key="Welcome_ContinueButton">Продовжити</sys:String>
+        <sys:String x:Key="Welcome_SelectRegionMsg">Будь ласка, оберіть регіон</sys:String>
+        <sys:String x:Key="Welcome_SelectRegionTitle">Регіон не обрано</sys:String>
+        <sys:String x:Key="Welcome_InvalidBalanceMsg">Введіть коректну суму (наприклад: 100 або 100.50)</sys:String>
+        <sys:String x:Key="Welcome_InvalidBalanceTitle">Помилка вводу</sys:String>
+
+        <sys:String x:Key="Region_Russia">Росія</sys:String>
+        <sys:String x:Key="Region_Ukraine">Україна</sys:String>
+        <sys:String x:Key="Region_UK">Велика Британія</sys:String>
+
+        <!-- MainWindow -->
+        <sys:String x:Key="Main_Title">Книжковий магазин</sys:String>
+        <sys:String x:Key="Main_TopUpBalanceButton">Поповнити баланс</sys:String>
+        <sys:String x:Key="Main_CartButton">Кошик</sys:String>
+        <sys:String x:Key="Main_BookTitle">Назва</sys:String>
+        <sys:String x:Key="Main_BookAuthor">Автор</sys:String>
+        <sys:String x:Key="Main_BookPrice">Ціна без націнки</sys:String>
+        <sys:String x:Key="BalanceText">Ваш баланс:</sys:String>
+
+        <!-- TopUpWindow -->
+        <sys:String x:Key="TopUp_Title">Поповнення балансу</sys:String>
+        <sys:String x:Key="TopUp_EnterAmount">Введіть суму поповнення:</sys:String>
+        <sys:String x:Key="TopUp_Button">Поповнити</sys:String>
+        <sys:String x:Key="TopUp_InvalidAmount">Введіть коректну суму поповнення</sys:String>
+        <sys:String x:Key="TopUp_InvalidAmountTitle">Помилка</sys:String>
+        <sys:String x:Key="TopUp_AuthorLabel">Автор</sys:String>
+        <sys:String x:Key="TopUp_PriceLabel">Ціна</sys:String>
+
+        <!-- CartWindow -->
+        <sys:String x:Key="Cart_Title">Кошик</sys:String>
+        <sys:String x:Key="Cart_RemoveSelected">Видалити обране</sys:String>
+        <sys:String x:Key="Cart_Pay">Оплатити кошик</sys:String>
+        <sys:String x:Key="Cart_Close">Закрити</sys:String>
+        <sys:String x:Key="Cart_SelectBookToRemove">Оберіть книгу для видалення.</sys:String>
+        <sys:String x:Key="Cart_InsufficientFundsTitle">Недостатньо коштів</sys:String>
+        <sys:String x:Key="Cart_PaymentSuccess">Оплата пройшла успішно!</sys:String>
+        <sys:String x:Key="Cart_TotalText">Загальна сума: {0}</sys:String>
+
+        <!-- BookDetailsWindow -->
+        <sys:String x:Key="BookDetails_Title">Інформація про книгу</sys:String>
+        <sys:String x:Key="BookDetails_AddToCart">Додати до кошика</sys:String>
+        <sys:String x:Key="BookDetails_Close">Закрити</sys:String>
+        <sys:String x:Key="BookDetails_AuthorLabel">Автор:</sys:String>
+        <sys:String x:Key="BookDetails_PriceLabel">Ціна:</sys:String>
+
+        <sys:String x:Key="Cart_InfoTitle">Інформація</sys:String>
+        <sys:String x:Key="Cart_AddSuccess">Книга додана до кошика!</sys:String>
+        <sys:String x:Key="Cart_InsufficientFundsMsg">Недостатньо коштів. Потрібно: {0}, доступно: {1}</sys:String>
+        <sys:String x:Key="TopUp_SuccessMsg">Баланс успішно поповнено на {0}</sys:String>
+        <sys:String x:Key="TopUp_SuccessTitle">Поповнення виконано</sys:String>
+        <sys:String x:Key="Main_LoadBooksError">Помилка завантаження книг</sys:String>
+        <sys:String x:Key="Main_ErrorTitle">Помилка</sys:String>
+
+    </ResourceDictionary>
